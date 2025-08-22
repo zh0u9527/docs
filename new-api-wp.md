@@ -1,22 +1,24 @@
-# 1. CVE-ID
+# CVE-ID
 CVE-2025-55573
-# 2. Product
-new-api, https://github.com/Calcium-Ion/new-api
 
-Affected Versions <=0.8.5.2
-# 3. Environment Setup
-```
-# download project
-git clone https://github.com/Calcium-Ion/new-api.git
-cd new-api
-# start
-docker-compose up -d
-```
-<img width="2109" height="166" alt="image" src="https://github.com/user-attachments/assets/9cf3af08-c454-407c-af26-061225f3999b" />
+# Bug author
+markbug
 
+# Product
+new-api
 
+GitHub Link: https://github.com/Calcium-Ion/new-api
 
-# 4. Detailed Procedure
+# Description
+In new-api system versions <= 0.8.5.2, an XSS vulnerability exists. Attackers can exploit this vulnerability to target any user in the system, including administrators.
+
+Vulnerability Type: XSS
+
+Vulnerability Severity: high
+
+Affected Version <=0.8.5.2
+
+# Detailed Procedure
 Navigate to the feature: Console → Playground. Here, you can interact with the AI (default settings are sufficient, no additional configuration is required). The page is shown as follows:
 <img width="2539" height="1461" alt="image" src="https://github.com/user-attachments/assets/e870a37e-ea3b-43b4-b533-af77c9cf39ce" />
 Here, we send a message containing XSS code to the AI. The server returns an error response, which does not require any handling. As shown below:
